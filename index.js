@@ -21,8 +21,8 @@ app.use(cors({
     credentials:true
 }))
 app.use(express.json())
-app.use("/api",userRouter)
-app.use("/api",notesRouter)
+app.use("/",userRouter)
+app.use("/",notesRouter)
 app.get("/",(req,res)=>{
  res.send("Hello User")
 })
