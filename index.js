@@ -23,7 +23,9 @@ app.use(cors({
 app.use(express.json())
 app.use("/api",userRouter)
 app.use("/api",notesRouter)
-
+app.get("/",(req,res)=>{
+ res.send("Hello User")
+})
 app.listen(5000,()=>{
     console.log("server has started!")
 })
