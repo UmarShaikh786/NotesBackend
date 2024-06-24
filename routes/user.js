@@ -1,11 +1,12 @@
 const router=require('express').Router()
 const User=require('../model/User')
-const bcrypt=require('bcrypt')
+const bcrypt=require('bcryptjs')
 
 router.post("/register",async(req,res)=>{
     const {avatarImage,name,email,password}=req.body
     const emailCheck=await User.findOne({email:email})
     const hashPassword=bcrypt.hashSync(password,10)
+    
     if(emailCheck)
         {
             res.status(400).json({message:"Email already exists"})
