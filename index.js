@@ -17,7 +17,7 @@ const port=5000
 const userRouter=require('./routes/user')
 const notesRouter=require('./routes/notes')
 app.use(cors({
-    origin:"http://localhost:3000",
+    origin:"https://notes-frontend-delta-taupe.vercel.app",
     credentials:true
 }))
 app.use(express.json())
