@@ -16,15 +16,7 @@ const app=express()
 const port=5000
 const userRouter=require('./routes/user')
 const notesRouter=require('./routes/notes')
-app.use((req, res, next) => {
-    res.set({
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "*",
-        "Access-Control-Allow-Headers": "'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token'",
-    });
 
-    next();
-});
 app.use(cors({
     origin:"https://make-notes-app.vercel.app",
     credentials:true
